@@ -30,6 +30,7 @@ export default function BinaryTextField({
 
   return (
     <TextField
+      fullWidth
       label={labels.binaryValue}
       value={value}
       onChange={onChange}

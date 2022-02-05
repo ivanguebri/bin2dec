@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Container from "@mui/material/Container";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 import { ConversionResult } from "..";
 import { BinaryTextField, converters } from "../../shared";
@@ -28,13 +27,22 @@ export default function ConverterContainer() {
   };
 
   return (
-    <Container>
-      <Card>
-        <CardContent>
+    <Grid container>
+      <Grid item xs={false} sm={2} />
+      <Grid container item xs={12} sm={8} direction="column" spacing={2}>
+        <Grid item>
+          <Typography textAlign="center" variant="h1">
+            Binary to Decimal Converter
+          </Typography>
+        </Grid>
+        <Grid item>
           <BinaryTextField value={binaryValue} onValueChange={onValueChange} />
+        </Grid>
+        <Grid item>
           <ConversionResult result={decimalValue} />
-        </CardContent>
-      </Card>
-    </Container>
+        </Grid>
+      </Grid>
+      <Grid item xs={false} sm={2} />
+    </Grid>
   );
 }
